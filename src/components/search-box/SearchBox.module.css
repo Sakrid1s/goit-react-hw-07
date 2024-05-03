@@ -1,0 +1,12 @@
+.searchBoxLabelInput {
+  margin-bottom: 20px;
+  border: 1px solid #111111;
+  border-radius: 5px;
+  width: 250px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.searchBoxInput {
+  outline: none;
+}

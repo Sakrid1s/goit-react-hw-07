@@ -1,0 +1,27 @@
+.errorMessage {
+  color: red;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #111111;
+  border-radius: 5px;
+  width: 250px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.formInput {
+  outline: none;
+}
+
+.formBtn {
+  width: 203px;
+  margin: auto;
+  padding: 5px;
+}
+
+.formLabel {
+  margin-bottom: 10px;
+}

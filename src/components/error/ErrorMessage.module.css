@@ -1,0 +1,16 @@
+.errorImg {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.errorDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMsg {
+  font-size: 30px;
+}
