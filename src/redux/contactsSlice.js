@@ -1,9 +1,5 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
-import {
-  addContactThunk,
-  deleteContactThunk,
-  fetchContactsThunk,
-} from './contactsOps';
+import { addContact, deleteContact, fetchContacts } from './contactsOps';
 import { selectNameFilter } from './filtersSlice';
 
 const initialState = {
@@ -34,18 +30,18 @@ const contactsSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(fetchContactsThunk.fulfilled, (state, action) => {
+      .addCase(fetchContacts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
       })
 
-      .addCase(addContactThunk.fulfilled, (state, action) => {
+      .addCase(addContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
         // state.items.push(action.payload);
       })
 
-      .addCase(deleteContactThunk.fulfilled, (state, action) => {
+      .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
       })

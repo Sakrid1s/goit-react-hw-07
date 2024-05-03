@@ -2,13 +2,13 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { IoPerson } from 'react-icons/io5';
 import css from './Contact.module.css';
 import { useDispatch } from 'react-redux';
-import { deleteContactThunk } from '../../redux/contactsOps';
+import { deleteContact } from '../../redux/contactsOps';
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
   const removeContact = contactId => {
-    dispatch(deleteContactThunk(contactId));
+    dispatch(deleteContact(contactId));
   };
   return (
     <div className={css.contactItem}>
