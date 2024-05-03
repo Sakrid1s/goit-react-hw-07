@@ -3,7 +3,6 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import css from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
-// import { addContact } from '../../redux/contactsSlice';
 import { addContactThunk } from '../../redux/contactsOps';
 
 const AddUserSchema = Yup.object().shape({
@@ -30,7 +29,6 @@ const ContactForm = () => {
   const handleSubmit = (values, actions) => {
     const { name, number } = values;
     const newContact = {
-      // id: nanoid(),
       name,
       number,
     };

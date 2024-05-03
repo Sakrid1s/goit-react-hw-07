@@ -32,42 +32,12 @@ const rejectedReducer = (state, action) => {
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
-  // reducers: {
-  // addContact: (state, action) => {
-  //   state.items.push(action.payload);
-  // },
-  // deleteContact: (state, action) => {
-  //   state.items = state.items.filter(item => item.id !== action.payload);
-  // },
-  // fetchingInProgress: state => {
-  //   state.isLoading = true;
-  //   state.items = [];
-  //   state.isError = null;
-  // },
-  // fetchingSuccess: (state, action) => {
-  //   state.isLoading = false;
-  //   state.items = action.payload;
-  // },
-  // fetchingError: (state, action) => {
-  //   state.isError = action.payload;
-  //   state.isLoading = false;
-  // },
-  // },
   extraReducers: builder => {
     builder
-      // .addCase(fetchContactsThunk.pending, state => {
-      //   state.isLoading = true;
-      //   state.items = [];
-      //   state.isError = null;
-      // })
       .addCase(fetchContactsThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
       })
-      // .addCase(fetchContactsThunk.rejected, (state, action) => {
-      //   state.isError = action.payload;
-      //   state.isLoading = false;
-      // })
 
       .addCase(addContactThunk.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -75,19 +45,11 @@ const contactsSlice = createSlice({
         // state.items.push(action.payload);
       })
 
-      // .addCase(deleteContactThunk.pending, state => {
-      //   state.isLoading = true;
-      //   state.items = [];
-      //   state.isError = null;
-      // })
       .addCase(deleteContactThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
       })
-      // .addCase(deleteContactThunk.rejected, (state, action) => {
-      //   state.isError = action.payload;
-      //   state.isLoading = false;
-      // })
+
       .addMatcher(isPending, pendingReducer)
       .addMatcher(isRejected, rejectedReducer);
   },
@@ -105,13 +67,5 @@ export const selectFilteredContacts = createSelector(
     );
   }
 );
-
-// export const {
-//   addContact,
-//   deleteContact,
-//   fetchingInProgress,
-//   fetchingSuccess,
-//   fetchingError,
-// } = contactsSlice.actions;
 
 export const contactsReducer = contactsSlice.reducer;
